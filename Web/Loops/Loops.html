@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            var nextNum;
+
+            for(let a = 1; a <= 20; a++) {
+                nextNum = a;
+                $("body").append(nextNum + "<br>");
+            }
+            $("body").append("<br>");
+
+            for(let b = 1; b <= 100; b++) {
+                nextNum = b;
+                $("body").append(nextNum + "<br>");
+            }
+            $("body").append("<br>");
+
+            for(let c = 2; c <= 50; c+=2) {
+                nextNum = c;
+                $("body").append(nextNum + "<br>");
+            }
+            $("body").append("<br>");
+
+            for(let d = 50; d >= 5; d-=5) {
+                nextNum = d;
+                $("body").append(nextNum + "<br>");
+            }
+
+        });
+
+
+    </script>
+
+    <title>Loops</title>
+</head>
+<body>
+
+</body>
+</html>

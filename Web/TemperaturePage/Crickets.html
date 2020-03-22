@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cricket Temperature</title>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+
+                var chirps = $("#numChirps").val();
+                var temp = Math.round((Number(chirps) + 40) * 10) / 10;
+                var newLine = $("<p></p>").text("The temperature with " + chirps + " chirps" +
+                    " is: " + temp + " degrees Fahrenheit");
+
+                $("body").append(newLine);
+
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+
+<h3>Enter the number of cricket chirps heard in the last 15 seconds.</h3>
+<input type = "number" id = "numChirps" value = "enter here">
+<button id = "btn1">Calculate Temperature</button>
+
+</body>
+</html>

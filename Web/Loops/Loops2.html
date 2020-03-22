@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Loops2</title>
+
+    <script>
+
+        function print()
+        {
+            for(let i = 0; i < strArr.length; i++)
+            {
+                document.body.append(strArr[i]);
+            }
+        }
+
+        let count = 0;
+        let strArr = ["", "", "", "", "", ""];
+
+        $(document).ready(function () {
+
+            $('button').click(function () {
+
+                if(document.getElementById("usrString").value === "SKIP")
+                    print();
+
+                if(document.getElementById("usrString").value === "SKIP")
+                    count ++;
+
+                else
+                {
+                    strArr.push(document.getElementById("usrString").value);
+                    count++;
+                }
+
+                if(count === 5)
+                {
+                    print();
+                }
+            });
+
+        });
+
+
+    </script>
+
+</head>
+<body>
+<h4>Enter and click submit for up to five strings. After five are entered, they will display at the bottom of the page.
+    Enter   END   to prematurely display less than five strings, or enter   SKIP   to skip entering one of the strings.
+</h4>
+
+<input type="text" id="usrString" placeholder="enter input here...">
+<button onclick ="document.getElementById('usrString').value = ''" id="submit">Submit</button>
+</body>
+</html>

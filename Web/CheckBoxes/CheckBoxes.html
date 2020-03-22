@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('input[type=checkbox]').click(function () {
+
+                var total = 0;
+
+                $.each($('input[name="option"]:checked'), function () {
+
+                    total += Number($(this).val());
+                })
+
+                $("#total").html("Total Price: $" + total);
+            });
+        });
+
+    </script>
+
+    <title>Calculating Federal Withholdings</title>
+</head>
+<body>
+
+    <h4>Gift Options:</h4>
+    <h6>Please Select From the Below Options</h6>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="option" value="2">Personalized Note
+        </label>
+    </div>
+    <div class form-check>
+        <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="option" value="3">Gift Wrapped
+        </label>
+    </div>
+    <div class form-check>
+        <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="option" value="5">Rush Shipping
+        </label>
+    </div>
+    <div class form-check>
+        <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="option" value="3">Party Favors
+        </label>
+    </div>
+
+    <p id="total">Total Price:</p>
+
+</body>
+</html>

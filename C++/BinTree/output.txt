@@ -1,0 +1,109 @@
+                                        z
+                                    y
+                                x
+                            w
+                        v
+                    u
+                                            t
+                                                s
+                                        r
+                                    q
+                                            p
+                                        o
+                                n
+                            m
+                        l
+                            k
+                                j
+                i
+                    h
+            f
+                e
+        d
+            c
+                    b
+                a
+
+--------------------------------
+
+                                        z
+                                    y
+                                x
+                            w
+                        v
+                    u
+                                            t
+                                                s
+                                        r
+                                    q
+                                            p
+                                        o
+                                n
+                            m
+                        l
+                            k
+                                j
+                i
+                    h
+            f
+                e
+        d
+            c
+                    b
+                a
+
+--------------------------------
+
+1
+0
+1
+
+--------------------------------
+
+                                        z
+                                    y
+                                x
+                            w
+                        v
+                    u
+                                            t
+                                                s
+                                        r
+                                    q
+                                            p
+                                        o
+                                n
+                            m
+                        l
+                            k
+                                j
+                i
+                    h
+            f
+                e
+        d
+            c
+                    b
+                a
+
+--------------------------------
+
+1
+a
+0
+
+--------------------------------
+
+Height is: 3
+
+--------------------------------
+
+The trees are equal
+The trees are NOT equal
+
+--------------------------------
+
+
+C:\Users\veteran\Dropbox\UW\CSS343\Program2\Debug\Program2.exe (process 12024) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+
+        <!-- Used to calculate total price -->
+        var sizeMod = 0;
+        var crust = 0;
+        var toppingCost = 0;
+        var numToppings = $('input[name="topping"]:checked').length;
+
+        $('input[type="radio"]').click(function() {
+
+            var radioPressed = $(this).attr('name');
+
+            if($(this).is(":checked") && radioPressed === "sizeMod") {
+                $('input[name="crust"]').attr("disabled", false);
+            }
+
+            if($(this).is(":checked") && radioPressed === "crust") {
+                $('input[name="sauce"]').attr("disabled", false);
+            }
+
+            if($('input[name="sauce"]:checked').attr('name') === "sauce") {
+                sizeMod = Number($('input[name="sizeMod"]:checked').attr('value'));
+                crust = Number($('input[name="crust"]:checked').attr('value'));
+                $("#total").html("Total Price: " + (sizeMod + crust + toppingCost));
+
+                if(numToppings < 3)
+                    $('input[name="topping"]').attr("disabled", false);
+            }
+        });
+
+        $('input[type="checkbox"]').click(function() {
+
+            numToppings = $('input[name="topping"]:checked').length;
+
+            if (numToppings >= 3)
+                $('input[name="topping"]:not(:checked)').attr("disabled", true);
+
+            else if(numToppings < 3)
+                $('input[name="topping"]:not(:checked)').attr("disabled", false);
+
+            if($('input[name="sizeMod"]:checked').attr("id") === "sm")
+                toppingCost = numToppings;
+
+            else if($('input[name="sizeMod"]:checked').attr("id") === "md")
+                toppingCost = (numToppings * 2);
+
+            else if($('input[name="sizeMod"]:checked').attr("id") === "lg")
+                toppingCost = (numToppings * 3);
+
+            //toDo Fix total
+            $("#total").html("Total Price: " + (sizeMod + crust + toppingCost));
+        });
+    });
+
+    </script>
+
+    <title>Pizza Order</title>
+</head>
+<body>
+
+<div class="container">
+    <h2>Please select your pizza options. Total will be updated and displayed at the bottom as you go.</h2>
+
+    <h4>Size:</h4>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="sizeMod" value="0" id="sm">Small
+
+            <input type="radio" class="form-check-input" name="sizeMod" value="3" id="md">Medium
+
+            <input type="radio" class="form-check-input" name="sizeMod" value="6" id="lg">Large
+        </label>
+    </div>
+
+    <h4>Crust Options:</h4>
+    <div class="form-check">
+        <label class="form-check-label" id="crust">
+            <input type="radio" class="form-check-input" name="crust" value="12" disabled>Thin
+
+            <input type="radio" class="form-check-input" name="crust" value="14" disabled>Regular
+
+            <input type="radio" class="form-check-input" name="crust" value="16" disabled>Deep Dish
+        </label>
+    </div>
+
+    <h4>Sauce Options:</h4>
+    <div class="form-check">
+        <label class="form-check-label" id="sauce">
+            <input type="radio" class="form-check-input" name="sauce" disabled>Red
+
+            <input type="radio" class="form-check-input" name="sauce" disabled>White
+
+            <input type="radio" class="form-check-input" name="sauce" disabled>Green
+        </label>
+    </div>
+
+    <h4>Toppings(Up to Three)</h4>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="topping" disabled>Pepperoni
+        </label>
+    </div>
+    <div class form-check>
+        <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="topping" disabled>Onion
+        </label>
+    </div>
+    <div class form-check>
+        <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="topping" disabled>Sausage
+        </label>
+    </div>
+    <div class form-check>
+        <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="topping" disabled>Mushrooms
+        </label>
+    </div>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="topping" disabled>Peppers
+        </label>
+    </div>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="topping" disabled>Olives
+        </label>
+    </div>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="topping" disabled>Garlic
+        </label>
+    </div>
+
+<p id="total">Total Price:</p>
+
+</div>
+
+</body>
+</html>
